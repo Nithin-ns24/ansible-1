@@ -1,0 +1,15 @@
+---
+- name: launch the ec2_instance
+  ec2:
+    key_name: ohionithin
+    region: us-east-1
+    instance_type: t2.micro
+    image: ami-0c4f7023847b90238
+    group: launch-wizard-1
+    vpc_subnet_id: subnet-0466c30fc22eb5aea
+    assign_public_ip: yes
+    count: 1
+    aws_access_key: "{{ access_key }}"
+    aws_secret_key: "{{ secret_key }}"
+
+

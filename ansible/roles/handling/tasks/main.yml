@@ -1,0 +1,25 @@
+---
+- name: start ec2_instance
+  hosts: server1
+  gather_facts: false
+  tasks:
+   - pip:
+      name: boto
+   - name: start ec2_instance-viaAnsible
+     ec2:
+      instance_ids: i-0ffe33f192ea99116
+      region: us-east-2
+      state: running
+      wait: True
+- name: stop ec2_instance
+  hosts: server1
+  gather_facts: false
+  tasks:
+   - pip:
+      name: boto
+   - name: stop ec2_instance-viaAnsible
+     ec2:
+      instance_ids: i-0ffe33f192ea99116
+      region: us-east-2
+      state: stopped
+      wait: True
