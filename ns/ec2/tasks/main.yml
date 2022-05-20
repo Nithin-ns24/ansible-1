@@ -1,0 +1,7 @@
+---
+- name: Launch ec2_instance
+  ec2_instance:
+             instance_type: t2.micro
+             image: ami-05ba3a39a75be1ec4
+             region: ap-south-1
+
